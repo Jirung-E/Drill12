@@ -23,6 +23,7 @@ def handle_events():
 
 def init():
     global boy
+    global balls
 
     grass = Grass()
     game_world.add_object(grass, 0)
@@ -43,6 +44,9 @@ def finish():
 def update():
     game_world.update()
     # fill here
+    for ball in balls:
+        if game_world.collide(boy, ball):
+            print("collided")
 
 def draw():
     clear_canvas()
