@@ -22,10 +22,7 @@ def handle_events():
             boy.handle_event(event)
 
 def init():
-    global grass
     global boy
-
-    running = True
 
     grass = Grass()
     game_world.add_object(grass, 0)
@@ -34,7 +31,8 @@ def init():
     game_world.add_object(boy, 1)
 
     # fill here
-
+    balls = [ Ball(random.randint(100, 1500), 60, 0) for _ in range(30) ]
+    game_world.add_objects(balls, 1)
 
 
 def finish():
